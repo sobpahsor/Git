@@ -143,9 +143,9 @@ for(j in 1:11340){
   }
 }
 
-for(k in 1:9720){
-  reuters[k,125]<-as.String(reuters[k,124])
-}
+#for(k in 1:9720){
+#  reuters[k,125]<-as.String(reuters[k,124])
+#}
 
 #write.csv(reuters, "backup.csv", row.names = F)
 write.csv(reuters, "reutersProcessed.csv", row.names = F)
