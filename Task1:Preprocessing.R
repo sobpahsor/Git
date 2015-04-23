@@ -12,6 +12,29 @@ library(openNLP)
 library(openNLPmodels.en)
 library(NLP)
 #-------------------------------------
+#Please run these two functions prior to the preprocessing and save the data frame as reuters
+ClearZeroColumn<-function(a){
+  v<-c(0)
+  for(i in 4:138){
+    x<-sum(a[,i])
+    if(x == 0)v<-append(v,i,after = length(v))
+  }
+  v<-v[-1]
+  clearzero<-a[,-v]
+  return(data.frame(clearzero))
+}
+
+ClearZeroRow<-function(a){
+        v<-c(0)
+        for(i in 1:21578){
+           x<-sum(a[i,4:121])
+           if(x == 0)v<-append(v,i,after = length(v))
+         }
+       v<-v[-1]
+       clearzero<-a[-v,]
+       return(data.frame(clearzero))
+}
+
 #find the entity from the Maxent_entity_annotator function in openNLP library
 sent_token_annotator <- Maxent_Sent_Token_Annotator()
 word_token_annotator <- Maxent_Word_Token_Annotator()
