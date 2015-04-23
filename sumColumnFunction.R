@@ -1,18 +1,3 @@
-sumColumn<-function(a){
-  for(i in 4:138){
-    x<-sum(a[,i])
-    if(x == 0)print(i)
-  }
-}
-
-sumrow<-function(a){
-  for(i in 1:21578){
-    x<-sum(a[i,4:121])
-    if(x == 0)print(i)
-  }
-}
-
-
 ClearZeroColumn<-function(a){
   v<-c(0)
   for(i in 4:138){
